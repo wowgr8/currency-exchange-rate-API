@@ -9,3 +9,18 @@ function clearFields() {
   $('.showErrors').text("");
   $('.showExchangeRate').text("");
 }
+
+$(document).ready(function() {
+  $('#exchangeBtn').click(function() {
+    let baseCurrency = $('#fromCurrency').val();
+    let targetCurrency = $('#toCurrency').val();
+    clearFields();
+    let promise = ExchangeService.exchangeRate(currency);
+    promise.then(function(response) {
+      const body = JSON.parse(response);
+      $('.showExchangeRate').text(`Your new amount in ${targetCurrency} is ${body.conversion_result}`)
+    }, function(error) {
+      $('.showErrors').text(`There was an error processing your request: ${error}`);
+    });
+  });
+});
