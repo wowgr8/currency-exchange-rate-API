@@ -8,9 +8,27 @@
       <h1>Currency Exchange</h1>
       <p>Enter the amount you wish to exchange in USD, select the currency you will be exchanging it for and hit submit!</p>
     </div>
-    <label for="amountUSD">Enter the amount in USD:</label>
-    <input id="amountUSD" type="text"></input>
-    <button class="btn-success" id="exchange">Exchange Funds</button>
+    <form id="currencyQuestions">
+      <h2>What currency do you have?</h2>
+      <select class="form-control" id="fromCurrency">
+        <option value="USD">United States Dollar</option>
+        <option value="PLN">Polish Złoty</option>
+        <option value="TND">Tunisian Dinar</option>
+        <option value="VUV">Vanuatu Vatu</option>
+        <option value="ZWL">Zimbabwean Dollar</option>
+      </select>
+      <h2>What currency do you wish to exchange it to?</h2>
+      <select class="form-control" id="toCurrency">
+        <option value="USD">United States Dollar</option>
+        <option value="PLN">Polish Złoty</option>
+        <option value="TND">Tunisian Dinar</option>
+        <option value="VUV">Vanuatu Vatu</option>
+        <option value="ZWL">Zimbabwean Dollar</option>
+      </select>
+      <label for="amountToExchange">Enter the amount:</label>
+      <input id="amountToExchange" type="text"></input>
+      <button class="btn-success" id="exchangeBtn">Exchange Funds</button>
+    </form>
     <div class="showErrors"></div>
     <div class="showExchangeRate"></div>
   </div>
